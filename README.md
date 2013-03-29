@@ -39,15 +39,29 @@ Une petite liste de tutoriels :
 
 Placez ensuite les fichiers à la racine de votre serveur web (par exemple /var/www/).
 
-Pour apache n'oubliez pas d'ajouter ces lignes au httpd.conf :
+Pour apache n'oubliez pas d'ajouter ces lignes au 000-default dans sites-available :
 
 ```
-  DirectoryIndex index.html index.htm index.xhtml index.php
+<VirtualHost *:80>
 
-  ServerName nomduserveur
-
-  DocumentRoot /path/to/web
+  DocumentRoot /var/www/ezseed
+  <Directory />
+    DirectoryIndex index.php index.html index.htm index.xhtml
+    Options FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  </Directory>
+  
+  ## reste du fichier ##
+  
+</VirtualHost>
 ```
+
+puis d'activer le mod rewrite `a2enmod rewrite`
+
+Vous pouvez aisément changer de serveur web, il n'est responsonsable que du rewrite.
+
 
 Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
 
@@ -76,7 +90,7 @@ Vérifiez que les dossiers `tmp` ait les droits d'écriture.
 Ceci fait éditez le fichier config/newSeedbox.sh et changez le chemin :
 `wwwConfigDir='/var/www/ezseed/config'`
 
-Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh :
+Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh (en root ou chmod +x):
 `./newSeedbox.sh`
 
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
@@ -88,3 +102,9 @@ Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le 
 ```
 
 En tant qu'administrateur accédez à /administration pour retrouver ces informations.
+
+##To Do##
+- Fichier d'installation pour Debian
+- Real-streaming (transformer automatiquement les vidéos en flv)
+- Permettre le partage de vidéos
+- Autorisé l'envoi de torrents
