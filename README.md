@@ -40,9 +40,11 @@ Pour apache n'oubliez pas d'ajouter ces lignes au httpd.conf :
   ServerName nomduserveur
 
   DocumentRoot /path/to/web
+```
 
 Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
 
+```
   define('SERVER_IP', '255.255.255.255'); // IP SERVER
 
   define('ROOT', '/var/www/ezseed/'); // Root path
