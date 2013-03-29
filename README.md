@@ -24,13 +24,12 @@ EzSeed a été préparé pour une utilisation avec Debian uniquement, il est pos
 
 ##Requis##
 
-Note : En cours de rédaction
-
 Afin de faire fonctionner ce script il est primordial d'avoir installé :
 - Un serveur Web (par exemple Apache)
 - ffmpeg
 - zip
 - php5, php5-cli, php5-ffmpeg
+- transmission
 
 Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
 
@@ -57,7 +56,7 @@ dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
 ```
 
 ##To Do##
-- Fichier d'installation pour Debian
+- Fichier d'installation automatique pour Debian
 - Real-streaming (transformer automatiquement les vidéos en flv)
 - Permettre le partage de vidéos
 - Autoriser l'envoi de torrents
