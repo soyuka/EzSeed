@@ -66,23 +66,23 @@ Vous pouvez aisément changer de serveur web, il n'est responsonsable que du rew
 Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
 
 ```
-  define('SERVER_IP', '255.255.255.255'); // IP SERVER
+define('SERVER_IP', '255.255.255.255'); // IP SERVER
 
-  define('ROOT', '/var/www/ezseed/'); // Root path
+define('ROOT', '/var/www/ezseed/'); // Root path
 
-  define('BASE', '/ezseed/'); // Web Base path
+define('BASE', '/ezseed/'); // Web Base path
 
-  define('DISK_SIZE', 25); // Disk size gb
+define('DISK_SIZE', 25); // Disk size gb
 
-  define('USER_COUNT', 1); // How many users ?
-
-
-  define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
-
-  define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
+define('USER_COUNT', 1); // How many users ?
 
 
-  define('ADMIN', 'ezseed'); //set the admin username
+define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
+
+define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
+
+
+define('ADMIN', 'ezseed'); //set the admin username
 ```
 
 Vérifiez que les dossiers `tmp` ait les droits d'écriture.
@@ -95,10 +95,10 @@ Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh (en root
 
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
 ```
-  PeerPort :
-  9092
-  RpcPort
-  51413
+PeerPort :
+9092
+RpcPort
+51413
 ```
 
 En tant qu'administrateur accédez à /administration pour retrouver ces informations.
@@ -107,4 +107,4 @@ En tant qu'administrateur accédez à /administration pour retrouver ces informa
 - Fichier d'installation pour Debian
 - Real-streaming (transformer automatiquement les vidéos en flv)
 - Permettre le partage de vidéos
-- Autorisé l'envoi de torrents
+- Autoriser l'envoi de torrents
