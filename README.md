@@ -10,6 +10,8 @@ Site en phase bêta. Je ne suis pas responsable de la mauvaise utilisation du si
 Un module de paiement a aussi été développé, pour plus d'informations <a href="http://dgear.fr/contact">contactez-moi</a>, il ne sera
 pas mis à la disposition du public par prévention d'une utilisation à but lucratif.
 
+Je propose une installation sous Debian 6.0 pour plus d'informations <a href="http://dgear.fr/contact">contactez-moi</a>.
+
 ##Présentation##
 
 EzSeed ([ˈiː-ziː siːdˈ]) est une plateforme permettant d'utiliser le P2P avec transmission 
