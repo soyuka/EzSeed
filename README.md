@@ -34,102 +34,11 @@ Afin de faire fonctionner ce script il est primordial d'avoir installé :
 
 Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
 
-##Exemple d'installation avec Apache sous Debian 6##
+##Wiki##
+<ul>
+<li><a href="https://github.com/soyuka/EzSeed/wiki/Debian6-Apache-Installation">Exemple d'installation avec Apache sous Debian 6</a></li>
 
-1) Installation des dépendances
-
-`apt-get install apache2 ffmpeg php5 php5-cli php5-ffmpeg`
-
-2) Vérifiez que `short_open_tag` est à `On` dans `php.ini`
-
-`nano /etc/php/apache2/php.ini`
-
-3) Installez git et clonez l'app
-
-```
-apt-get install git
-# on se place dans /home
-cd /home
-git clone https://github.com/soyuka/EzSeed
-# on change le répertoire de nom
-mkdir seedbox
-mv ./EzSeed/* ./seedbox/
-```
-
-4) On créé un virtualhost sous apache et on désactive le défaut
-
-```
-a2dissite 000-default
-nano /etc/apache2/sites-available/seedbox
-```
-
-Mettez-y : 
-```
-<VirtualHost *:80>
-
-  DocumentRoot /home/seedbox/
-  <Directory /home/seedbox/>
-    Options -Indexes FollowSymLinks MultiViews
-    AllowOverride All
-  </Directory>
-</VirtualHost>
-```
-
-5) On lance maintenant le tout :
-
-```
-a2ensite seedbox
-a2enmod rewrite
-/etc/init.d/apache2 restart
-```
-
-6) Editons le fichier de création d'utilisateur :
-
-`nano /home/seedbox/config/newSeedbox.sh``
-
-Changez le `wwwDir` en `/home/seedbox`
-
-7) On créé notre premier utilisateur :
-
-```
-chmod +x /home/seedbox/config/newSeedbox.sh
-/home/seedbox/config/newSeedbox.sh
-
-#Par exemple :
-username
-123456
-51413
-9091
-
-#Le script installe transmission-daemon s'il n'est pas disponible
-```
-
-Note : Il faut changer les ports à chaque utilisateur !
-
-8) Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
-
-```
-nano /home/seedbox/inc/config.php
-
-# Définissez vos variables par exemple :
-define('SERVER_IP', '255.255.255.255'); // IP SERVER
-
-define('ROOT', '/home/seedbox/'); // Root path
-
-define('BASE', '/'); // Web Base path
-
-define('DISK_SIZE', 25); // Disk size gb
-
-define('USER_COUNT', 1); // How many users ?
-
-define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
-
-define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
-
-define('ADMIN', 'username'); //set the admin username
-```
-
-9) Vérifiez que les dossiers `tmp` ait les droits d'écriture et connectez-vous sur votre ip !
+</ul>
 
 ##Un peu d'aide##
 
