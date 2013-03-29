@@ -33,9 +33,12 @@ Une petite liste de tutoriels :
 Placez ensuite les fichiers à la racine de votre serveur web (par exemple /var/www/).
 
 Pour apache n'oubliez pas d'ajouter ces lignes au httpd.conf :
+
 <code>
 DirectoryIndex index.html index.htm index.xhtml index.php
+
 ServerName nomduserveur
+
 DocumentRoot /path/to/web
 </code>
 
@@ -43,15 +46,23 @@ Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php
 
 <code>
 define('SERVER_IP', '255.255.255.255'); // IP SERVER
+
 define('ROOT', '/var/www/ezseed/'); // Root path
+
 define('BASE', '/ezseed/'); // Web Base path
+
 define('DISK_SIZE', 25); // Disk size gb
+
 define('USER_COUNT', 1); // How many users ?
 
+
 define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
+
 define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
 
+
 define('ADMIN', 'ezseed'); //set the admin username
+
 </code>
 
 Vérifiez que les dossiers `tmp` ait les droits d'écriture.
@@ -65,9 +76,13 @@ Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh :
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
 <code>
 PeerPort :
+
 9092
+
 RpcPort
+
 51413
+
 </code>
 
 En tant qu'administrateur accédez à /administration pour retrouver ces informations.
