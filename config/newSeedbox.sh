@@ -70,7 +70,7 @@ mv $wwwDir/config/settings.json /etc/transmission-daemon-$username/settings.json
 ln -sf /etc/transmission-daemon-$username/settings.json /var/lib/transmission-daemon-$username/info/settings.json
 chmod -R 755 /etc/transmission-daemon-$username
 
-echo "Adding user config username/pass/rpcport/daysleft"
+echo "Adding user config username/peerport/rpcport/daysleft"
 echo -e "$username;$peerport;$rpcport;30"  >> $wwwDir/config/users
 
 echo "Reloading apache"
