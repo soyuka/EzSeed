@@ -8,7 +8,7 @@ read peerport
 echo "RpcPort :"
 read rpcport
 
-wwwConfigDir='/var/www/ezseed/config'
+wwwDir='/var/www/ezseed/'
 
 if [ -f /etc/init.d/transmission-daemon ]
 then
@@ -23,14 +23,14 @@ fi
 echo "Adding user"
 useradd $username -p $(mkpasswd -H md5 $pass) -G debian-transmission -d /home/seedbox/users/$username -m
 
-cd /home/seedbox/users/$username
+cd $wwwDir/users/$username
 mkdir downloads uploads
 
 chown -R $username:debian-transmission downloads uploads
 chmod 777 downloads uploads
 
 echo "Adding tmp folder"
-cd /home/seedbox/tmp
+cd $wwwDir/tmp
 mkdir $username
 chmod 777 $username
 
@@ -57,21 +57,21 @@ chmod 755 /etc/default/transmission-daemon
 
 echo "Editing settings"
 
-cp $wwwConfigDir/settings.default.json $wwwConfigDir/settings.json
+cp $wwwDir/config/settings.default.json $wwwDir/config/settings.json
 
-sed -i -e 's/"download-dir": ""/"download-dir": "\/home\/seedbox\/users\/'$username'\/downloads"/g' $wwwConfigDir/settings.json
-sed -i -e 's/"peer-port": /"peer-port": '$peerport'/g' $wwwConfigDir/settings.json
-sed -i -e 's/"rpc-password": ""/"rpc-password": "'$pass'"/g' $wwwConfigDir/settings.json
-sed -i -e 's/"rpc-port": /"rpc-port": '$rpcport'/g' $wwwConfigDir/settings.json
-sed -i -e 's/"rpc-username": ""/"rpc-username": "'$username'"/g' $wwwConfigDir/settings.json
+sed -i -e 's/"download-dir": ""/"download-dir": "\/home\/seedbox\/users\/'$username'\/downloads"/g' $wwwDir/config/settings.json
+sed -i -e 's/"peer-port": /"peer-port": '$peerport'/g' $wwwDir/config/settings.json
+sed -i -e 's/"rpc-password": ""/"rpc-password": "'$pass'"/g' $wwwDir/config/settings.json
+sed -i -e 's/"rpc-port": /"rpc-port": '$rpcport'/g' $wwwDir/config/settings.json
+sed -i -e 's/"rpc-username": ""/"rpc-username": "'$username'"/g' $wwwDir/config/settings.json
 
-mv $wwwConfigDir/settings.json /etc/transmission-daemon-$username/settings.json
+mv $wwwDir/config/settings.json /etc/transmission-daemon-$username/settings.json
 
 ln -sf /etc/transmission-daemon-$username/settings.json /var/lib/transmission-daemon-$username/info/settings.json
 chmod -R 755 /etc/transmission-daemon-$username
 
 echo "Adding user config username/pass/rpcport/daysleft"
-echo -e "$username;$peerport;$rpcport;30"  >> $wwwConfigDir/users
+echo -e "$username;$peerport;$rpcport;30"  >> $wwwDir/config/users
 
 echo "Reloading apache"
 /etc/init.d/apache2 reload
