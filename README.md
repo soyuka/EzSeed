@@ -93,6 +93,12 @@ Ceci fait éditez le fichier config/newSeedbox.sh et changez le chemin :
 Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh (en root ou chmod +x):
 `./newSeedbox.sh`
 
+Si mkpasswd n'est pas disponible vous pouvez prendre le paquet ubuntu :
+```
+wget http://mirrors.kernel.org/ubuntu/pool/universe/w/whois/mkpasswd_5.0.0ubuntu3_amd64.deb
+dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
+```
+
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
 ```
 PeerPort :
