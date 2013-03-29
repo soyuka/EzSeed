@@ -114,6 +114,7 @@ $(window).load(function() {
 	//$('[data-id="'+jumpTo+'""]').height()
 	if(jumpTo != undefined) {
 		scrollToElement($('.element[data-id="'+jumpTo+'"]'));
+		$.removeCookie('jumpTo');
 	}
 
 });
