@@ -14,7 +14,9 @@ pas mis à la disposition du public par prévention d'une utilisation à but luc
 
 EzSeed ([ˈiː-ziː siːdˈ]) est une plateforme permettant d'utiliser le P2P avec transmission 
 sur un serveur distant et de le partager a sa famille ou ses amis. Il est très simple à utiliser après installation, 
-même chez les plus novices.
+même chez les plus novices. 
+
+EzSeed a été préparé pour une utilisation avec Debian uniquement, il est possible que quelques changements soient nécéssaires sur un autre système d'opération.
 
 <a href="http://www.zupmage.eu/multi-Io1963c1">Voir en images</a>
 
@@ -25,7 +27,6 @@ Note : En cours de rédaction
 Afin de faire fonctionner ce script il est primordial d'avoir installé :
 - Un serveur Web (par exemple Apache)
 - php5, php5-cli, php5-ffmpeg
-- avoir installé transmission (apt-get transmission-daemon)
 
 Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
 
