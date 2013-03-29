@@ -22,7 +22,7 @@ EzSeed a été préparé pour une utilisation avec Debian uniquement, il est pos
 
 <a href="http://www.zupmage.eu/multi-Io1963c1">Voir en images</a>
 
-##Installation##
+##Requis##
 
 Note : En cours de rédaction
 
@@ -34,84 +34,118 @@ Afin de faire fonctionner ce script il est primordial d'avoir installé :
 
 Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
 
-Une petite liste de tutoriels :
-- <a href="http://www.lafermeduweb.net/billet/tutorial-creer-un-serveur-web-complet-sous-debian-1-apache-160.html">Installer un serveur sous Debian</a>
-- <a href="http://d.stavrovski.net/blog/installing-ffmpeg-and-php-ffmpeg-in-debian-6-squeeze/">Installer ffmpeg et php-ffmpeg</a>
-- <a href="www.admin-debian.com/ftp/vsftpd-un-serveur-ftp-hautement-securise/">Configurer vsftpd sous Debian</a>
+##Exemple d'installation avec Apache sous Debian 6##
 
-Placez ensuite les fichiers à la racine de votre serveur web (par exemple /var/www/).
+1. Installation des dépendances
 
-Pour apache n'oubliez pas d'ajouter ces lignes au 000-default dans sites-available :
+`apt-get install apache2 ffmpeg php5 php5-cli php5-ffmpeg`
 
+2. Vérifiez que `short_open_tag` est à `On` dans `php.ini`
+
+`nano /etc/php/apache2/php.ini`
+
+3. Installez git et clonez l'app
+
+```
+apt-get install git
+# on se place dans /home
+cd /home
+git clone https://github.com/soyuka/EzSeed
+# on change le répertoire de nom
+mkdir seedbox
+mv ./EzSeed/* ./seedbox/
+```
+
+4. On créé un virtualhost sous apache et on désactive le défaut
+
+```
+a2dissite 000-default
+nano /etc/apache2/sites-available/seedbox
+```
+
+Mettez-y : 
 ```
 <VirtualHost *:80>
 
-  DocumentRoot /var/www/ezseed
-  <Directory />
-    DirectoryIndex index.php index.html index.htm index.xhtml
-    Options FollowSymLinks
+  DocumentRoot /home/seedbox/
+  <Directory /home/seedbox/>
+    Options -Indexes FollowSymLinks MultiViews
     AllowOverride All
-    Order allow,deny
-    allow from all
   </Directory>
-  
-  ## reste du fichier ##
-  
 </VirtualHost>
 ```
 
-puis d'activer le mod rewrite `a2enmod rewrite`
-
-Vous pouvez aisément changer de serveur web, il n'est responsonsable que du rewrite.
-
-
-Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
+5. On lance maintenant le tout :
 
 ```
+a2ensite seedbox
+a2enmod rewrite
+/etc/init.d/apache2 restart
+```
+
+6. Editons le fichier de création d'utilisateur :
+
+`nano /home/seedbox/config/newSeedbox.sh``
+
+Changez le `wwwDir` en `/home/seedbox`
+
+7. On créé notre premier utilisateur :
+
+```
+chmod +x /home/seedbox/config/newSeedbox.sh
+/home/seedbox/config/newSeedbox.sh
+
+#Par exemple :
+username
+123456
+51413
+9091
+
+#Le script installe transmission-daemon s'il n'est pas disponible
+```
+
+Note : Il faut changer les ports à chaque utilisateur !
+
+8. Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
+
+```
+nano /home/seedbox/inc/config.php
+
+# Définissez vos variables par exemple :
 define('SERVER_IP', '255.255.255.255'); // IP SERVER
 
-define('ROOT', '/var/www/ezseed/'); // Root path
+define('ROOT', '/home/seedbox/'); // Root path
 
-define('BASE', '/ezseed/'); // Web Base path
+define('BASE', '/'); // Web Base path
 
 define('DISK_SIZE', 25); // Disk size gb
 
 define('USER_COUNT', 1); // How many users ?
 
-
 define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
 
 define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
 
-
-define('ADMIN', 'ezseed'); //set the admin username
+define('ADMIN', 'username'); //set the admin username
 ```
 
-Vérifiez que les dossiers `tmp` ait les droits d'écriture.
+9. Vérifiez que les dossiers `tmp` ait les droits d'écriture et connectez-vous sur votre ip !
 
-Ceci fait éditez le fichier config/newSeedbox.sh et changez le chemin :
-`wwwDir='/var/www/ezseed'`
+##Un peu d'aide##
 
-Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh (en root ou chmod +x):
-`./newSeedbox.sh`
+Vérfiez que l'extension ffmpeg est bien installée :
+
+```
+ffmpeg -version
+
+php -m | grep ffmpeg
+```
 
 Si mkpasswd n'est pas disponible vous pouvez prendre le paquet ubuntu :
 ```
 wget http://mirrors.kernel.org/ubuntu/pool/universe/w/whois/mkpasswd_5.0.0ubuntu3_amd64.deb
 dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
 ```
-
-Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
-```
-PeerPort :
-9092
-RpcPort
-51413
-```
-
-Note : Il faut changer les ports à chaque utilisateur !
-
-En tant qu'administrateur accédez à /administration pour retrouver ces informations.
 
 ##To Do##
 - Fichier d'installation pour Debian
