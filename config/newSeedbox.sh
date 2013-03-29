@@ -8,7 +8,7 @@ read peerport
 echo "RpcPort :"
 read rpcport
 
-wwwDir='/var/www/ezseed/'
+wwwDir='/var/www/ezseed'
 
 if [ -f /etc/init.d/transmission-daemon ]
 then
@@ -21,7 +21,7 @@ else
 fi
 
 echo "Adding user"
-useradd $username -p $(mkpasswd -H md5 $pass) -G debian-transmission -d /home/seedbox/users/$username -m
+useradd $username -p $(mkpasswd -H md5 $pass) -G debian-transmission -d $wwwDir/users/$username -m
 
 cd $wwwDir/users/$username
 mkdir downloads uploads
