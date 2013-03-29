@@ -1,7 +1,7 @@
 EzSeed
 ======
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/fr/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EzSeed</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/soyuka/EzSeed/" property="cc:attributionName" rel="cc:attributionURL">soyuka</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 France</a>.<br />Les autorisations au-delà du champ de cette licence peuvent être obtenues à <a xmlns:cc="http://creativecommons.org/ns#" href="http://dgear.fr/contact/" rel="cc:morePermissions">http://dgear.fr/contact/</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/fr/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EzSeed</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/soyuka/EzSeed/" property="cc:attributionName" rel="cc:attributionURL">soyuka</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 France</a>.<br />Les autorisations au-delà du champ de cette licence peuvent être obtenues à <a xmlns:cc="http://creativecommons.org/ns#" href="http://dgear.fr/contact/" rel="cc:morePermissions">ici</a>.
 
 Site en phase bêta. Je ne suis pas responsable de la mauvaise utilisation du site.
 
@@ -33,22 +33,26 @@ Une petite liste de tutoriels :
 Placez ensuite les fichiers à la racine de votre serveur web (par exemple /var/www/).
 
 Pour apache n'oubliez pas d'ajouter ces lignes au httpd.conf :
->DirectoryIndex index.html index.htm index.xhtml index.php
->ServerName nomduserveur
->DocumentRoot /path/to/web
+<code>
+DirectoryIndex index.html index.htm index.xhtml index.php
+ServerName nomduserveur
+DocumentRoot /path/to/web
+</code>
 
 Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
 
->define('SERVER_IP', '255.255.255.255'); // IP SERVER
->define('ROOT', '/var/www/ezseed/'); // Root path
->define('BASE', '/ezseed/'); // Web Base path
->define('DISK_SIZE', 25); // Disk size gb
->define('USER_COUNT', 1); // How many users ?
+<code>
+define('SERVER_IP', '255.255.255.255'); // IP SERVER
+define('ROOT', '/var/www/ezseed/'); // Root path
+define('BASE', '/ezseed/'); // Web Base path
+define('DISK_SIZE', 25); // Disk size gb
+define('USER_COUNT', 1); // How many users ?
 
->define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
->define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
+define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
+define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
 
->define('ADMIN', 'ezseed'); //set the admin username
+define('ADMIN', 'ezseed'); //set the admin username
+</code>
 
 Vérifiez que les dossiers `tmp` ait les droits d'écriture.
 
@@ -59,9 +63,11 @@ Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh :
 >./newSeedbox.sh
 
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
->PeerPort :
->9092
->RpcPort
->51413
+<code>
+PeerPort :
+9092
+RpcPort
+51413
+</code>
 
 En tant qu'administrateur accédez à /administration pour retrouver ces informations.
