@@ -16,6 +16,8 @@ EzSeed ([ˈiː-ziː siːdˈ]) est une plateforme permettant d'utiliser le P2P av
 sur un serveur distant et de le partager a sa famille ou ses amis. Il est très simple à utiliser après installation, 
 même chez les plus novices.
 
+<a href="http://www.zupmage.eu/multi-Io1963c1">Voir en images</a>
+
 ##Installation##
 
 Note : En cours de rédaction
