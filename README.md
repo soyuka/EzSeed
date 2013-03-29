@@ -26,6 +26,8 @@ Note : En cours de rédaction
 
 Afin de faire fonctionner ce script il est primordial d'avoir installé :
 - Un serveur Web (par exemple Apache)
+- ffmpeg
+- zip
 - php5, php5-cli, php5-ffmpeg
 
 Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
