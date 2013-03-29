@@ -67,10 +67,10 @@ Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php
 Vérifiez que les dossiers `tmp` ait les droits d'écriture.
 
 Ceci fait éditez le fichier config/newSeedbox.sh et changez le chemin :
->wwwConfigDir='/var/www/ezseed/config'
+`wwwConfigDir='/var/www/ezseed/config'`
 
 Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh :
->./newSeedbox.sh
+`./newSeedbox.sh`
 
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
 ```
