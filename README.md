@@ -34,6 +34,7 @@ Placez ensuite les fichiers à la racine de votre serveur web (par exemple /var/
 
 Pour apache n'oubliez pas d'ajouter ces lignes au httpd.conf :
 
+```
   DirectoryIndex index.html index.htm index.xhtml index.php
 
   ServerName nomduserveur
@@ -59,6 +60,7 @@ Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php
 
 
   define('ADMIN', 'ezseed'); //set the admin username
+```
 
 Vérifiez que les dossiers `tmp` ait les droits d'écriture.
 
@@ -69,11 +71,11 @@ Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh :
 >./newSeedbox.sh
 
 Il vous sera demandé le nom d'utilisateur, le mot de passe, le peer-port et le rpc-port, par exemple :
-
+```
   PeerPort :
   9092
   RpcPort
   51413
-
+```
 
 En tant qu'administrateur accédez à /administration pour retrouver ces informations.
