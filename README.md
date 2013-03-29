@@ -36,15 +36,15 @@ Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisate
 
 ##Exemple d'installation avec Apache sous Debian 6##
 
-1. Installation des dépendances
+1) Installation des dépendances
 
 `apt-get install apache2 ffmpeg php5 php5-cli php5-ffmpeg`
 
-2. Vérifiez que `short_open_tag` est à `On` dans `php.ini`
+2) Vérifiez que `short_open_tag` est à `On` dans `php.ini`
 
 `nano /etc/php/apache2/php.ini`
 
-3. Installez git et clonez l'app
+3) Installez git et clonez l'app
 
 ```
 apt-get install git
@@ -56,7 +56,7 @@ mkdir seedbox
 mv ./EzSeed/* ./seedbox/
 ```
 
-4. On créé un virtualhost sous apache et on désactive le défaut
+4) On créé un virtualhost sous apache et on désactive le défaut
 
 ```
 a2dissite 000-default
@@ -75,7 +75,7 @@ Mettez-y :
 </VirtualHost>
 ```
 
-5. On lance maintenant le tout :
+5) On lance maintenant le tout :
 
 ```
 a2ensite seedbox
@@ -83,13 +83,13 @@ a2enmod rewrite
 /etc/init.d/apache2 restart
 ```
 
-6. Editons le fichier de création d'utilisateur :
+6) Editons le fichier de création d'utilisateur :
 
 `nano /home/seedbox/config/newSeedbox.sh``
 
 Changez le `wwwDir` en `/home/seedbox`
 
-7. On créé notre premier utilisateur :
+7) On créé notre premier utilisateur :
 
 ```
 chmod +x /home/seedbox/config/newSeedbox.sh
@@ -106,7 +106,7 @@ username
 
 Note : Il faut changer les ports à chaque utilisateur !
 
-8. Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
+8) Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php :
 
 ```
 nano /home/seedbox/inc/config.php
@@ -129,7 +129,7 @@ define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
 define('ADMIN', 'username'); //set the admin username
 ```
 
-9. Vérifiez que les dossiers `tmp` ait les droits d'écriture et connectez-vous sur votre ip !
+9) Vérifiez que les dossiers `tmp` ait les droits d'écriture et connectez-vous sur votre ip !
 
 ##Un peu d'aide##
 
