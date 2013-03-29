@@ -50,6 +50,8 @@ Vous pouvez maintenant configurer les paramètres dans le fichier inc/config.php
 
 >define('ADMIN', 'ezseed'); //set the admin username
 
+Vérifiez que les dossiers `tmp` ait les droits d'écriture.
+
 Ceci fait éditez le fichier config/newSeedbox.sh et changez le chemin :
 >wwwConfigDir='/var/www/ezseed/config'
 
