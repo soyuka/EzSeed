@@ -88,7 +88,7 @@ define('ADMIN', 'ezseed'); //set the admin username
 Vérifiez que les dossiers `tmp` ait les droits d'écriture.
 
 Ceci fait éditez le fichier config/newSeedbox.sh et changez le chemin :
-`wwwConfigDir='/var/www/ezseed/config'`
+`wwwDir='/var/www/ezseed'`
 
 Vous pouvez maintenant ajouter des utilisateurs à votre seedbox en ssh (en root ou chmod +x):
 `./newSeedbox.sh`
@@ -106,6 +106,8 @@ PeerPort :
 RpcPort
 51413
 ```
+
+Note : Il faut changer les ports à chaque utilisateur !
 
 En tant qu'administrateur accédez à /administration pour retrouver ces informations.
 
