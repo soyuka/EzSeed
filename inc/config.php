@@ -41,6 +41,7 @@ require_once('class/user.class.php');
 require_once('class/transmission.class.php');
 require_once('class/explorer.class.php');
 
+// Temporaly
 class loader {
 	
 	static public $time_start;
