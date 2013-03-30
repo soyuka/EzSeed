@@ -58,6 +58,7 @@ dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
 
 ##To Do##
 - Problème d'intégration de transmission
+- Script de suppression d'un utilisateur
 - Fichier d'installation automatique pour Debian
 - Real-streaming (transformer automatiquement les vidéos en flv)
 - Permettre le partage de fichiers
