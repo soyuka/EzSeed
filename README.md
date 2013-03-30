@@ -33,7 +33,7 @@ Afin de faire fonctionner ce script il est primordial d'avoir installé :
 
 Pour le streaming, il est utilisé DivX web, vous pouvez télécharger le plugin <a href="http://www.divx.com/downloads/divx/1">ici</a> !
 
-Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
+Il peut être intéressant d'installer aussi <a href="http://www.admin-debian.com/ftp/vsftpd-un-serveur-ftp-hautement-securise/">vsftpd</a> pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
 Les utilisateurs ont comme répertoire par défaut leur répertoire de téléchargement et y seront donc chrooté naturellement !
 
 ##Wiki##
