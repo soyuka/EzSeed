@@ -1,7 +1,7 @@
 EzSeed
 ======
 
-<img src="http://www.zupmage.eu/up/SMMjOXaEpv.png" alt="EzSeed logo"/>
+<span style="text-align:center"><img src="http://www.zupmage.eu/up/SMMjOXaEpv.png" alt="EzSeed logo"/></span>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/fr/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EzSeed</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/soyuka/EzSeed/" property="cc:attributionName" rel="cc:attributionURL">soyuka</a> est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 France</a>.<br />Les autorisations au-delà du champ de cette licence peuvent être obtenues à <a xmlns:cc="http://creativecommons.org/ns#" href="http://dgear.fr/contact/" rel="cc:morePermissions">ici</a>.
 
