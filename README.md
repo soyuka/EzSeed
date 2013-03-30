@@ -14,9 +14,9 @@ Je propose une installation sous Debian 6.0 pour plus d'informations <a href="ht
 
 ##Présentation##
 
-<img src="http://www.zupmage.eu/up/CdA0QaJtpl.png" alt="EzSeed logo" class="logo" /> EzSeed ([ˈiː-ziː siːdˈ]) est une plateforme permettant d'utiliser le P2P avec transmission 
+EzSeed ([ˈiː-ziː siːdˈ]) est une plateforme permettant d'utiliser le P2P avec transmission 
 sur un serveur distant et de le partager a sa famille ou ses amis. Il est très simple à utiliser après installation, 
-même chez les plus novices. 
+même chez les plus novices. <img src="http://www.zupmage.eu/up/CdA0QaJtpl.png" alt="EzSeed logo" class="logo" width="80px" /> 
 
 EzSeed a été préparé pour une utilisation avec Debian uniquement, il est possible que quelques changements soient nécéssaires sur un autre système d'opération.
 
