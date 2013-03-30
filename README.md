@@ -1,3 +1,7 @@
+<style>
+.logo{width:50px;vertical-align:middle;
+</style>
+
 <img src="http://www.zupmage.eu/up/CdA0QaJtpl.png" alt="EzSeed logo" class="logo" style="width:50px;vertical-align:middle" /> EzSeed
 ====================================================================================================================================
 
