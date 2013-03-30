@@ -71,3 +71,5 @@ ce qui est aussi un des majeurs inconvénients pour ce qui est de sa transformat
 J'utilise aussi <a href="https://github.com/desandro/isotope">Isotope</a> et <a href="https://github.com/carhartl/jquery-cookie">jQuery Cookie</a>
 afin d'améliorer la navigation générale.
 
+Il est possible qu'une erreur de sécurité due à l'intégration de transmission dans une iframe survienne sous IE ou Safari !
+
