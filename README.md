@@ -31,7 +31,10 @@ Afin de faire fonctionner ce script il est primordial d'avoir installé :
 - php5, php5-cli, php5-ffmpeg
 - transmission
 
+Pour le streaming, il est utilisé DivX web, vous pouvez télécharger le plugin <a href="http://www.divx.com/downloads/divx/1">ici</a> !
+
 Il peut être intéressant d'installer aussi vsftpd pour permettre aux utilisateurs de se connecter par FTP à leur répertoire.
+Les utilisateurs ont comme répertoire par défaut leur répertoire de téléchargement et y seront donc chrooté naturellement !
 
 ##Wiki##
 <ul>
@@ -61,3 +64,10 @@ dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
 - Real-streaming (transformer automatiquement les vidéos en flv)
 - Permettre le partage de fichiers
 - Autoriser l'envoi de torrents/fichiers
+
+##Développement##
+Le script est entièrement basé sur <a href="https://github.com/brycied00d/PHP-Transmission-Class/">transmission-rpc</a>
+ce qui est aussi un des majeurs inconvénients pour ce qui est de sa transformation.
+J'utilise aussi <a href="https://github.com/desandro/isotope">Isotope</a> et <a href="https://github.com/carhartl/jquery-cookie">jQuery Cookie</a>
+afin d'améliorer la navigation générale.
+
