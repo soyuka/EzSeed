@@ -96,7 +96,7 @@
 				</span>
 			</div>
 		<?php } else { ?>
-			<h1 class="text-center"><img src="<?echo BASE?>img/translogo.png" /></h1>
+			<h1 class="text-center invert pullLeft" style="font-size:3em;"><img src="<?echo BASE?>img/planetetrans.png" style="vertical-align:middle;margin-right:15px" height="50px"/>EzSeed</h1>
 		<?php } ?>
 		<div class="clear clearfix"></div>
 	</div>
@@ -121,15 +121,7 @@
 
 	<? if($_COOKIE['hasSeen'] != 1) {?>
 	<div class="maintenance">
-		<a href="#" class="close pullRight setCookie">fermer</a>
-		<h3>23/02/2013</h3>
-		<div>
-			<p>
-				Nous accueillons aujourd'hui un nouveau membre et je passe donc le serveur à 200 go par personnes, le prix est lui revu à la baisse pour un coût de 3,60€ par mois !
-				Si vous voulez quand même plus de place, contactez-moi !
-			</p>
-		</div>
-		<p class="small">Ces informations sont disponibles dans le changelog</p>
+		<!-- Tenez au courant les utilisateurs -->
 	</div>
 	<? } ?>
 <?}?>

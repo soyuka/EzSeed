@@ -3,12 +3,21 @@
 <div id="maintenance" class="maintenance">
 	<a href="#" class="close pullRight">fermer</a>
 	<div class="clearfix"></div>
-	<h3>23/02/2013</h3>
+	<h3>30/03/2013</h3>
 	<div>
 		<p>
-			Nous accueillons aujourd'hui un nouveau membre et je passe donc le serveur à 200 go par personnes, le prix est lui revu à la baisse pour un coût de 3,60€ par mois !
-			Si vous voulez quand même plus de place, contactez-moi !
+			Petite mise à jour : 
+			<ul>
+				<li>Mise à jour de la partie écouter</li>
+				<li>Auto-zip des albums</li>
+				<li>Little bug fixes</li>
+			</ul>
+			<br />
+			Le script est maintenant sous Licence Creative Commons et est distribué gratuitement sur le <a href="https://github.com/EzSeed">github</a> !
 		</p>
+	</div>
+	<h3>23/02/2013</h3>
+	<div>
 		<p>
 			Mise à jour de JQuery 1.9.1
 		</p>
