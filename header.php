@@ -5,6 +5,7 @@
 	<meta name="robots" content="noindex, nofollow">
 	<meta charset="utf-8" />
 	<title>Seedbox de <?echo User::$username?></title>
+	<link rel="icon" type="image/png" href="<?echo BASE;?>img/favicon.png" />
 
 	<link rel="stylesheet" type="text/css" href="<?echo BASE;?>css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="<?echo BASE;?>css/style.css" />
@@ -95,7 +96,7 @@
 				</span>
 			</div>
 		<?php } else { ?>
-			<h1 class="pullLeft invert">Ezseed - Bienvenue !</h1>
+			<h1 class="text-center"><img src="<?echo BASE?>img/translogo.png" /></h1>
 		<?php } ?>
 		<div class="clear clearfix"></div>
 	</div>
