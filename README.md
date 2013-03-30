@@ -56,7 +56,8 @@ dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
 ```
 
 ##To Do##
+- Problème d'intégration de transmission
 - Fichier d'installation automatique pour Debian
 - Real-streaming (transformer automatiquement les vidéos en flv)
-- Permettre le partage de vidéos
-- Autoriser l'envoi de torrents
+- Permettre le partage de fichiers
+- Autoriser l'envoi de torrents/fichiers
