@@ -4,7 +4,7 @@
 <head>
 	<meta name="robots" content="noindex, nofollow">
 	<meta charset="utf-8" />
-	<title>Seedbox de <?echo User::$username?></title>
+	<title><? echo $_GET['page'] == 'connexion' ? "Connectez-vous" : "Seedbox de ".User::$username?></title>
 	<link rel="icon" type="image/png" href="<?echo BASE;?>img/favicon.png" />
 
 	<link rel="stylesheet" type="text/css" href="<?echo BASE;?>css/reset.css" />
