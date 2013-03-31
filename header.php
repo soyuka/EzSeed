@@ -54,7 +54,7 @@
 					<ul>
 						<li>Nombre de torrents : <? echo $explorer->statistics->arguments->torrentCount;?></li>
 						<li>Reçu : <? echo $explorer->byteConvert($explorer->statistics->arguments->cumulative_stats->downloadedBytes, null, true);?></li>
-						<li>Envoyé : <? echo $explorer->byteConvert($explorer->statistics->arguments->cumulative_stats->uplodadedBytes, null, true);?></li>
+						<li>Envoyé : <? echo $explorer->byteConvert($explorer->statistics->arguments->cumulative_stats->uploadedBytes, null, true);?></li>
 				</div>
 				<?if(defined('MUST_PAY') && MUST_PAY === true) {?>
 					<a href="payer" title="Paiement - <? echo (User::$days_left > 1) ? User::$days_left . 'jours restants' : User::$days_left . 'jour restant';?>" class="tip">
