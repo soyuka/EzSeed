@@ -32,7 +32,6 @@ foreach ($explorer->torrents as $torrent) {
 	}
 	
 	if($type == 'erreur') {
-		User::debug($torrent);
 		echo '<p>'.$torrent->name.' ce fichier n\'existe plus, supprimez le torrent.</p>';
 	} else {
 	?>
