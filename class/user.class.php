@@ -40,13 +40,10 @@ class User {
 		}
 		fclose($file_handle);
 
+		
+
 		if($error)
 			throw new Exception($error, 501);
-
-		if(self::$days_left <= 1 && $_GET['page'] != 'payer') {
-			header('Location:./payer');
-			exit();
-		}
 
 		//if(!session_id()) session_start();
 
@@ -55,7 +52,8 @@ class User {
 		self::$temp_dir =   './tmp/'.self::$username.'/';
 
 		self::$transmission_rpc_url = 'http://' . SERVER_IP . ':'.self::$rpc_port.'/transmission/rpc/';
-		self::$transmission_web_url = 'http://' . SERVER_IP . ':'.self::$rpc_port.'/transmission/web/';
+		self::$transmission_web_url = 'http://'.self::$username . ':' . self::$password . '@' . SERVER_IP . ':'.self::$rpc_port.'/transmission/web/';
+
 	}
 
 	public static function setUserCookie() {

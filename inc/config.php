@@ -8,27 +8,29 @@ date_default_timezone_set("Europe/Paris");
 $path = '/tmp';
 exec('ffmpeg -version', $path, $returncode);
 if ($returncode == 127)
-	die('ffmpeg n\'est pas disponible');
+	die('FFMpeg n\'est pas disponible');
 
 if(!session_id()) session_start();
 
 /** CONFIG **/
 
-define('SERVER_IP', '255.255.255.255'); // IP SERVER
-define('ROOT', '/var/www/ezseed/'); // Root path
-define('BASE', '/ezseed/'); // Web Base path
-define('DISK_SIZE', 25); // Disk size gb
-define('USER_COUNT', 1); // How many users ?
+define('SERVER_IP', '255.255.255.255');
+define('ROOT', '/home/seedbox/');
+define('BASE', '/');
+define('DISK_SIZE', 1000); //disk size for the seedbox gb
+define('USER_COUNT', 5); //Users count
+
+/** Not public availabe **/
+define('MUST_PAY', false); // Users have to pay
+// define('SERVER_PRICE', 18);
+// define('PAYPAL_EMAIL', 'soyukaster@gmail.com');
+
+define('DEBUG', false);
 
 define('ZIP_AUDIO_FOLDERS', 1); //zip audio folders automatically
 define('MAX_AUDIO_FOLDER_SIZE', 700); //in MB - if it's bigger we won't zip it
 
 define('ADMIN', 'ezseed'); //set the admin username
-
-/** NOT PUBLIC AVAILABLE **/
-define('MUST_PAY', false); // Users have to pay
-// define('SERVER_PRICE', 3);
-// define('PAYPAL_EMAIL', 'xxx@xxx.com');
 
 /** DO NOT MODIFY AFTER THIS LINE **/
 
@@ -41,6 +43,7 @@ require_once('class/user.class.php');
 require_once('class/transmission.class.php');
 require_once('class/explorer.class.php');
 
+// Temporaly
 class loader {
 	
 	static public $time_start;
@@ -102,8 +105,14 @@ if($_POST['username'] && $_POST['password'])
 	exit();
 }
 
+if(User::$days_left <= 1 && $_GET['page'] != 'payer') {
+	header('Location:payer');
+	exit();
+}
+
 if($user)
 	$explorer = new Explorer();
 
 //If > 95% block transmission
 $percentSpaceUsed = (intval($explorer->spaceUsed) * 100) / round(DISK_SIZE / USER_COUNT);
+

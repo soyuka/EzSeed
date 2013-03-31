@@ -25,12 +25,6 @@ foreach ($explorer->torrents as $torrent) {
 <div class="element list <?echo $type?>" data-id="<?php echo $torrent->id;?>">
 
 	<?php
-	if($torrent->id == 28) {
-		debug($torrent->folder);
-		if(is_array($torrent->files))
-			debug($torrent->files);
-	}
-	
 	if($type == 'erreur') {
 		echo '<p>'.$torrent->name.' ce fichier n\'existe plus, supprimez le torrent.</p>';
 	} else {
