@@ -8,7 +8,7 @@ date_default_timezone_set("Europe/Paris");
 $path = '/tmp';
 exec('ffmpeg -version', $path, $returncode);
 if ($returncode == 127)
-	die('ffmpeg is NOT available');
+	die('ffmpeg n\'est pas disponible');
 
 if(!session_id()) session_start();
 
@@ -41,7 +41,6 @@ require_once('class/user.class.php');
 require_once('class/transmission.class.php');
 require_once('class/explorer.class.php');
 
-// Temporaly
 class loader {
 	
 	static public $time_start;
@@ -71,6 +70,11 @@ class loader {
 		ob_flush();
 		flush();
 	}
+}
+
+if(isset($_GET['mc_gross'])) {
+	header('Location:./');
+	exit();
 }
 
 //User check
