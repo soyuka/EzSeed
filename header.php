@@ -120,9 +120,10 @@
 	</div>
 
 	<? if($_COOKIE['hasSeen'] != 1) {?>
-	<div class="maintenance">
-		<!-- Tenez au courant les utilisateurs -->
-	</div>
+	<!-- Tenez au courant les utilisateurs -->
+	<!-- <div class="maintenance">
+		<a href="#" class="close pullRight setCookie">fermer</a>
+		</div> -->
 	<? } ?>
 <?}?>
 
