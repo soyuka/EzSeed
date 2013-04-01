@@ -10,6 +10,8 @@ class User {
 	
 	public static $days_left;
 	public static $rpc_port;
+	public static $peer_port;
+
 
 	public static $transmission_rpc_url;
 	public static $transmission_web_url;
