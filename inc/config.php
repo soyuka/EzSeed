@@ -105,7 +105,7 @@ if($_POST['username'] && $_POST['password'])
 	exit();
 }
 
-if(User::$days_left <= 1 && $_GET['page'] != 'payer') {
+if(MUST_PAY === true && User::$days_left <= 1 && $_GET['page'] != 'payer') {
 	header('Location:payer');
 	exit();
 }

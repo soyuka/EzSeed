@@ -31,6 +31,7 @@ class User {
 			if($line[0] == $user_infos['username']) {
 				self::$username = $user_infos['username'];
 				self::$password = $user_infos['password'];
+				self::$peer_port = $line[1];
 				self::$rpc_port = $line[2];
 				self::$days_left = $line[3];
 				$error = false;
