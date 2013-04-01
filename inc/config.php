@@ -23,7 +23,7 @@ define('USER_COUNT', 5); //Users count
 /** Not public availabe **/
 define('MUST_PAY', false); // Users have to pay
 // define('SERVER_PRICE', 18);
-// define('PAYPAL_EMAIL', 'soyukaster@gmail.com');
+// define('PAYPAL_EMAIL', 'email');
 
 define('DEBUG', false);
 
