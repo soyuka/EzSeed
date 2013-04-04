@@ -58,8 +58,8 @@ dpkg -i mkpasswd_5.0.0ubuntu3_amd64.deb
 
 ##To Do##
 - Problème d'intégration de transmission
-- Script de suppression d'un utilisateur
-- Fichier d'installation automatique pour Debian
+- Script de suppression d'un utilisateur (en cours)
+- Fichier d'installation automatique pour Debian (<a href="https://github.com/soyuka/EzSeed/wiki/Debian6-Apache-Installation">voir ici</a>)
 - Real-streaming (transformer automatiquement les vidéos en flv)
 - Permettre le partage de fichiers
 - Autoriser l'envoi de torrents/fichiers
