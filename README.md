@@ -1,3 +1,7 @@
+
+#No longer maintained please see [http://github.com/soyuka/ezseed2](http://github.com/soyuka/ezseed2)
+
+
 <img src="http://www.zupmage.eu/up/iruSlxxpwj.png" />
 ======
 
